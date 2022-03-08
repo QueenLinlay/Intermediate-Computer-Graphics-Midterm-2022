@@ -359,9 +359,10 @@ void DefaultSceneLayer::_CreateScene()
 
 			// Create and attach a renderer for the monkey
 			RenderComponent::Sptr renderer = wall1->Add<RenderComponent>();
-			renderer->SetMesh(winng);
+			renderer->SetMesh(wallMesh);
 			renderer->SetMaterial(boxMaterial);
 
+			wall1->Add<SimpleAutoMovement>();
 			/* Example of a trigger that interacts with static and kinematic bodies as well as dynamic bodies*/
 			EnemyTrigger::Sptr Check = wall1->Add<EnemyTrigger>();
 			TriggerVolume::Sptr volume = Check->AddComponent<TriggerVolume>();
@@ -383,7 +384,7 @@ void DefaultSceneLayer::_CreateScene()
 
 			// Create and attach a renderer for the monkey
 			RenderComponent::Sptr renderer = win->Add<RenderComponent>();
-			renderer->SetMesh(wallMesh);
+			renderer->SetMesh(winng);
 			renderer->SetMaterial(boxMaterial);
 
 			/* Example of a trigger that interacts with static and kinematic bodies as well as dynamic bodies*/

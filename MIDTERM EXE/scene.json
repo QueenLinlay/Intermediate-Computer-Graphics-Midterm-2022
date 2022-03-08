@@ -5,7 +5,7 @@
 		"z": 0.10000000149011612
 	},
 	"default_material": "null",
-	"main_camera": "6c196af1-0b07-fe43-8b45-26d40d26b2e1",
+	"main_camera": "1df2e03a-f0a2-2046-b953-1c1fca09e53c",
 	"objects": [
 		{
 			"children": [],
@@ -20,14 +20,14 @@
 					"enabled": true,
 					"far_plane": 1000.0,
 					"fov_radians": 1.5707963705062866,
-					"guid": "6c196af1-0b07-fe43-8b45-26d40d26b2e1",
+					"guid": "1df2e03a-f0a2-2046-b953-1c1fca09e53c",
 					"near_plane": 0.10000000149011612,
 					"ortho_enabled": false,
 					"ortho_size": 10.0
 				},
 				"SimpleCameraControl": {
 					"enabled": true,
-					"guid": "a56d6ab0-7574-7b41-87b6-3dfdaffc6e2f",
+					"guid": "24a6b238-32f6-c242-a807-952fde70a89c",
 					"mouse_sensitivity": {
 						"x": 0.5,
 						"y": 0.30000001192092896
@@ -40,7 +40,7 @@
 					"shift_mult": 2.0
 				}
 			},
-			"guid": "6719f06c-8b99-d248-9026-7fcfb0d51221",
+			"guid": "d1798090-fea2-1442-a1aa-d741022f3edf",
 			"hide_in_inspector": false,
 			"name": "Main Camera",
 			"parent": "null",
@@ -78,7 +78,7 @@
 								"z": -1.0
 							},
 							"enabled": true,
-							"guid": "0782c60a-ca5f-e149-95c5-6ddf5e90d7d1",
+							"guid": "cbcd18e9-2389-2f44-bad3-83be46e23de3",
 							"intensity": 139.57757568359375,
 							"params": {
 								"x": 0.0,
@@ -89,10 +89,10 @@
 							"type": "Point"
 						}
 					},
-					"guid": "0fee726a-d984-6143-a368-bb6a1ef87767",
+					"guid": "50e0f2cc-cf17-d34b-9ccf-76e0c08c1c2f",
 					"hide_in_inspector": false,
 					"name": "Light",
-					"parent": "fcec293c-9e0c-ff42-94ee-cd9ebdb8cb2a",
+					"parent": "4f9a1eef-6432-3746-bd9e-aa0667cda874",
 					"position": {
 						"x": 0.0,
 						"y": 0.0,
@@ -112,7 +112,7 @@
 				}
 			],
 			"components": null,
-			"guid": "fcec293c-9e0c-ff42-94ee-cd9ebdb8cb2a",
+			"guid": "4f9a1eef-6432-3746-bd9e-aa0667cda874",
 			"hide_in_inspector": false,
 			"name": "Lights",
 			"parent": "null",
@@ -148,7 +148,7 @@
 						"z": -1.0
 					},
 					"enabled": true,
-					"guid": "0782c60a-ca5f-e149-95c5-6ddf5e90d7d1",
+					"guid": "cbcd18e9-2389-2f44-bad3-83be46e23de3",
 					"intensity": 139.57757568359375,
 					"params": {
 						"x": 0.0,
@@ -159,10 +159,10 @@
 					"type": "Point"
 				}
 			},
-			"guid": "0fee726a-d984-6143-a368-bb6a1ef87767",
+			"guid": "50e0f2cc-cf17-d34b-9ccf-76e0c08c1c2f",
 			"hide_in_inspector": false,
 			"name": "Light",
-			"parent": "fcec293c-9e0c-ff42-94ee-cd9ebdb8cb2a",
+			"parent": "4f9a1eef-6432-3746-bd9e-aa0667cda874",
 			"position": {
 				"x": 0.0,
 				"y": 0.0,
@@ -192,7 +192,7 @@
 								"y": 50.0,
 								"z": 1.0
 							},
-							"guid": "f52d2ea8-fed6-c440-a886-16d898d6fc7e",
+							"guid": "4fcfe0f0-5927-104b-ab2c-eb02e0c3abe6",
 							"position": {
 								"x": 0.0,
 								"y": 0.0,
@@ -213,7 +213,7 @@
 					],
 					"enabled": true,
 					"group": 1,
-					"guid": "86351b87-ed44-5640-94ac-f56ede41ac89",
+					"guid": "80914c61-fd1d-db4d-b704-670984debc96",
 					"linear_damping": 0.0,
 					"mask": -1,
 					"mass": 1.0,
@@ -221,12 +221,12 @@
 				},
 				"RenderComponent": {
 					"enabled": true,
-					"guid": "63d2ee2d-2927-874a-89bb-bc54bcba488e",
-					"material": "730b9658-2c82-d140-b1a0-532600706d87",
-					"mesh": "f98e88c8-199b-6c40-9e0a-ae9c7dfaa1df"
+					"guid": "41d1d303-aa04-a842-9322-75581b10be0f",
+					"material": "9379fc6b-f402-ec45-9628-cbd1ce7f822c",
+					"mesh": "ca7aa831-5a9a-524e-b62f-93d52ee2d2e4"
 				}
 			},
-			"guid": "5f62d50a-9f7b-e149-922c-afaf4d205660",
+			"guid": "ae2537f6-87ce-6946-bc28-40720381d409",
 			"hide_in_inspector": false,
 			"name": "Plane",
 			"parent": "null",
@@ -252,12 +252,12 @@
 			"components": {
 				"EnemyTrigger": {
 					"enabled": true,
-					"guid": "da115d8e-7d7a-f941-932e-42e883289a4c"
+					"guid": "a84c69d6-57c0-bc43-8fc6-d5da9f9c27f6"
 				},
 				"Gameplay::Physics::TriggerVolume": {
 					"colliders": [
 						{
-							"guid": "6e7c2684-a373-3843-a860-f4c30919aa5c",
+							"guid": "7359aacd-aeb1-e04b-92a0-969e1257e7df",
 							"position": {
 								"x": 0.0,
 								"y": 0.0,
@@ -278,22 +278,26 @@
 					],
 					"enabled": true,
 					"group": 1,
-					"guid": "6cfc00be-b846-2a40-97f2-d7d6c2ed9146",
+					"guid": "2d5f283f-c934-8242-87a6-03a7382234fc",
 					"mask": -1
 				},
 				"JumpBehaviour": {
 					"enabled": true,
-					"guid": "dd501bbe-76fb-a044-9b98-4d2c7fb862dd",
+					"guid": "954b082c-ccab-7040-885d-1f29dfcbbc3e",
 					"impulse": 10.0
 				},
 				"RenderComponent": {
 					"enabled": true,
-					"guid": "41983022-048e-0041-ac23-d625c77979e2",
-					"material": "730b9658-2c82-d140-b1a0-532600706d87",
-					"mesh": "68894b42-7730-6843-9bf4-9d9e49ec54d9"
+					"guid": "2b627867-a0e6-e345-bda1-9a7319ec424e",
+					"material": "9379fc6b-f402-ec45-9628-cbd1ce7f822c",
+					"mesh": "1a5d7c67-5363-3a49-bda9-6c5071d51c3e"
+				},
+				"SimpleAutoMovement": {
+					"enabled": true,
+					"guid": "66ecbf83-0e64-b446-9388-b2871ef11fe1"
 				}
 			},
-			"guid": "b7d27ae3-b423-e841-9763-2515bc7516e3",
+			"guid": "95217319-b59d-4047-9164-9b1ec606e205",
 			"hide_in_inspector": false,
 			"name": "Wall 1",
 			"parent": "null",
@@ -319,12 +323,12 @@
 			"components": {
 				"EnemyTriggers": {
 					"enabled": true,
-					"guid": "1af6f069-5dcd-3f4a-b5c6-2f3042102608"
+					"guid": "baae481e-820f-8943-b94d-9ab2ded841f6"
 				},
 				"Gameplay::Physics::TriggerVolume": {
 					"colliders": [
 						{
-							"guid": "bf090d01-2c3e-454e-8e45-63c78eb96426",
+							"guid": "7dfae098-0415-994f-afc5-641dafaa72fc",
 							"position": {
 								"x": 0.0,
 								"y": 0.0,
@@ -345,22 +349,22 @@
 					],
 					"enabled": true,
 					"group": 1,
-					"guid": "a0b49357-adbc-d94d-8187-503c35bda5a4",
+					"guid": "17e1b383-baaf-484b-a288-a55d6ea046ba",
 					"mask": -1
 				},
 				"JumpBehaviour": {
 					"enabled": true,
-					"guid": "fe2ae983-a8cb-874b-9992-13efc8a56d26",
+					"guid": "287df986-19c4-8a4f-acfc-a319254e18a2",
 					"impulse": 10.0
 				},
 				"RenderComponent": {
 					"enabled": true,
-					"guid": "8af6688c-1352-3b48-9209-ffb5cda2add3",
-					"material": "730b9658-2c82-d140-b1a0-532600706d87",
-					"mesh": "e6558c1e-9af7-7c41-8022-00bb096cb7d2"
+					"guid": "594cc966-8854-6049-bd91-c64614eec5c0",
+					"material": "9379fc6b-f402-ec45-9628-cbd1ce7f822c",
+					"mesh": "29b1283a-6c28-e945-888b-6f0f00ebeed7"
 				}
 			},
-			"guid": "02943042-1db1-f745-80e3-b621957d6969",
+			"guid": "221cbd26-071f-df41-99ef-373f9f772691",
 			"hide_in_inspector": false,
 			"name": "winng",
 			"parent": "null",
@@ -386,13 +390,13 @@
 			"components": {
 				"EnemyTrigger": {
 					"enabled": true,
-					"guid": "7556d3c4-4cb2-f34d-a76d-482cfc260a13"
+					"guid": "4bcb1418-6484-3d47-bf00-dfb7b130fa2c"
 				},
 				"Gameplay::Physics::RigidBody": {
 					"angular_damping": 0.004999999888241291,
 					"colliders": [
 						{
-							"guid": "75837a9c-9ce7-0240-8cc2-7ddc5c80c564",
+							"guid": "2b2c6743-5c6d-dd42-b8ad-3b31c90a4668",
 							"position": {
 								"x": 0.0,
 								"y": 0.0,
@@ -413,7 +417,7 @@
 					],
 					"enabled": true,
 					"group": 1,
-					"guid": "44376d29-ae87-c148-9e33-dfbca24fc857",
+					"guid": "c832a5e2-3a1c-7646-b0db-e5f7e2308b80",
 					"linear_damping": 0.0,
 					"mask": -1,
 					"mass": 1.0,
@@ -421,21 +425,21 @@
 				},
 				"JumpBehaviour": {
 					"enabled": true,
-					"guid": "c958143e-8192-0c43-a87a-89e6cb6bc62b",
+					"guid": "d516e41b-8991-5741-baa3-0fc1496e84cf",
 					"impulse": 10.0
 				},
 				"RenderComponent": {
 					"enabled": true,
-					"guid": "6c3611c1-9230-da4f-8447-89c716de5665",
-					"material": "d0a58fd2-90ac-fb49-85c6-68bbd9130c21",
-					"mesh": "94f30c01-faa2-2447-9bb9-eca92a033cb9"
+					"guid": "cce3f519-3664-ff4e-a758-ab8aafe9221c",
+					"material": "c3e676ac-b07a-f148-b525-9a4ec2bffc58",
+					"mesh": "70d06add-d3f4-494d-8fb7-70d4fe00eeb2"
 				},
 				"SimpleObjectController": {
 					"enabled": true,
-					"guid": "feb9f8ed-b275-dd47-bf62-379774658b9c"
+					"guid": "f4546009-b22d-a147-8d39-9d7b95a2a08d"
 				}
 			},
-			"guid": "07dca1fb-ccaa-d945-8046-771c92288521",
+			"guid": "d2a8f1ac-9f12-d849-8706-3ce4376c8b1b",
 			"hide_in_inspector": false,
 			"name": "Monkey 1",
 			"parent": "null",
@@ -462,7 +466,7 @@
 				"Gameplay::Physics::TriggerVolume": {
 					"colliders": [
 						{
-							"guid": "1eaa3e9b-b1b0-064b-a2fa-0d07eb31a40f",
+							"guid": "100fcb2e-6bf0-2149-b6e5-3b6446a18363",
 							"half_extents": {
 								"x": 3.0,
 								"y": 3.0,
@@ -488,15 +492,15 @@
 					],
 					"enabled": true,
 					"group": 1,
-					"guid": "02f2546d-498d-e94f-818d-5dabf19df783",
+					"guid": "2b2a82d1-fdc5-ed46-bd1a-5de31b2d496d",
 					"mask": -1
 				},
 				"TriggerVolumeEnterBehaviour": {
 					"enabled": true,
-					"guid": "fd641763-10e6-5743-918b-28bf7c315ee2"
+					"guid": "5b33d793-d3f2-cd4d-b7d4-34815051d5f9"
 				}
 			},
-			"guid": "02bb084f-0f5e-9640-9485-f694a37b00f3",
+			"guid": "01a3b773-3893-db4f-b7e8-de39ea437ed0",
 			"hide_in_inspector": false,
 			"name": "Trigger",
 			"parent": "null",
@@ -526,7 +530,7 @@
 			"y": 0.0,
 			"z": 0.0
 		},
-		"shader": "907cada3-7d9b-3446-b7a7-db719c5184d3",
-		"texture": "2f0c4020-9ff1-9d49-9539-73642eca553e"
+		"shader": "0aef34aa-131b-d746-9aeb-b4675767495d",
+		"texture": "04976b01-0f55-3443-b712-23d7037b27f1"
 	}
 }
