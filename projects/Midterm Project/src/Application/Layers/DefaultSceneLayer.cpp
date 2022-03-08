@@ -352,7 +352,7 @@ void DefaultSceneLayer::_CreateScene()
 		GameObject::Sptr wall1 = scene->CreateGameObject("Wall 1");
 		{
 			// Set position in the scene
-			wall1->SetPostion(glm::vec3(3.2f, 15.0f, 1.5f));
+			wall1->SetPostion(glm::vec3(3.2f, 15.0f, 2.0f));
 			wall1->SetRotation(glm::vec3(0.0f, 0.0f, 90.0f));
 			// Add some behaviour that relies on the physics body
 			wall1->Add<JumpBehaviour>();
@@ -376,7 +376,7 @@ void DefaultSceneLayer::_CreateScene()
 		GameObject::Sptr win = scene->CreateGameObject("winng");
 		{
 			// Set position in the scene
-			win->SetPostion(glm::vec3(3.2f, 25.0f, 1.5f));
+			win->SetPostion(glm::vec3(3.2f, 25.0f, 2.0f));
 			win->SetRotation(glm::vec3(0.0f, 0.0f, 90.0f));
 			// Add some behaviour that relies on the physics body
 			win->Add<JumpBehaviour>();
