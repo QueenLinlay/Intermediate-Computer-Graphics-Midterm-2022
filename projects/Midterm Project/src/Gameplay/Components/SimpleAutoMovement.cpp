@@ -12,7 +12,7 @@
 
 SimpleAutoMovement::SimpleAutoMovement() :
 	IComponent(),
-	_moveSpeeds(glm::vec3(1.0f))
+	_moveSpeeds(glm::vec3(5.0f))
 {}
 
 SimpleAutoMovement::~SimpleAutoMovement() = default;
@@ -27,12 +27,13 @@ void SimpleAutoMovement::Update(float deltaTime)
 
 		if (Position.y <= 0.0f)
 		{
-			_moveSpeeds.y = 1.0f;
+			GetGameObject()->SetPostion(glm::vec3(3.2f, 20.0f, 5.0f));
+			
 		}
 
 		if (Position.y >= 10.0f)
 		{
-			_moveSpeeds.y = -1.0f;
+			_moveSpeeds.y = -5.0f;
 		}
 		_moveVector.y += _moveSpeeds.y;
 

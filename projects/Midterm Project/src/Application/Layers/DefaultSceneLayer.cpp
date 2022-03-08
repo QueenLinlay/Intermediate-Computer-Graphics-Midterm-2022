@@ -51,6 +51,7 @@
 #include "Gameplay/Components/SimpleObjectController.h"
 #include "Gameplay/Components/EnemyTrigger.h"
 #include "Gameplay/Components/SimpleAutoMovement.h"
+#include "Gameplay/Components/Winning.h"
 
 // Physics
 #include "Gameplay/Physics/RigidBody.h"
@@ -136,14 +137,15 @@ void DefaultSceneLayer::_CreateScene()
 
 
 		// Load in the meshes
-		MeshResource::Sptr monkeyMesh = ResourceManager::CreateAsset<MeshResource>("Monkey.obj");
-		MeshResource::Sptr wallMesh = ResourceManager::CreateAsset<MeshResource>("Wall2.obj");
+		MeshResource::Sptr monkeyMesh = ResourceManager::CreateAsset<MeshResource>("Tony.obj");
+		MeshResource::Sptr wallMesh = ResourceManager::CreateAsset<MeshResource>("bbb.obj");
+		MeshResource::Sptr winng = ResourceManager::CreateAsset<MeshResource>("Wall2.obj");
 
 		// Load in some textures
 		Texture2D::Sptr    boxTexture   = ResourceManager::CreateAsset<Texture2D>("textures/box-diffuse.png");
 		Texture2D::Sptr    boxSpec      = ResourceManager::CreateAsset<Texture2D>("textures/box-specular.png");
-		Texture2D::Sptr    monkeyTex    = ResourceManager::CreateAsset<Texture2D>("textures/monkey-uvMap.png");
-		Texture2D::Sptr    leafTex      = ResourceManager::CreateAsset<Texture2D>("textures/leaves.png");
+		Texture2D::Sptr    monkeyTex    = ResourceManager::CreateAsset<Texture2D>("textures/tonytex.png");
+		Texture2D::Sptr    leafTex      = ResourceManager::CreateAsset<Texture2D>("textures/btex.png");
 		leafTex->SetMinFilter(MinFilter::Nearest);
 		leafTex->SetMagFilter(MagFilter::Nearest);
 
@@ -202,7 +204,7 @@ void DefaultSceneLayer::_CreateScene()
 		Material::Sptr boxMaterial = ResourceManager::CreateAsset<Material>(deferredForward);
 		{
 			boxMaterial->Name = "Box";
-			boxMaterial->Set("u_Material.AlbedoMap", boxTexture);
+			boxMaterial->Set("u_Material.AlbedoMap", leafTex);
 			boxMaterial->Set("u_Material.Shininess", 0.1f);
 			boxMaterial->Set("u_Material.NormalMap", normalMapDefault);
 		}
@@ -220,7 +222,7 @@ void DefaultSceneLayer::_CreateScene()
 		Material::Sptr testMaterial = ResourceManager::CreateAsset<Material>(deferredForward); 
 		{
 			testMaterial->Name = "Box-Specular";
-			testMaterial->Set("u_Material.AlbedoMap", boxTexture); 
+			testMaterial->Set("u_Material.AlbedoMap", boxMaterial); 
 			testMaterial->Set("u_Material.Specular", boxSpec);
 			testMaterial->Set("u_Material.NormalMap", normalMapDefault);
 		}
@@ -229,7 +231,7 @@ void DefaultSceneLayer::_CreateScene()
 		Material::Sptr foliageMaterial = ResourceManager::CreateAsset<Material>(foliageShader);
 		{
 			foliageMaterial->Name = "Foliage Shader";
-			foliageMaterial->Set("u_Material.AlbedoMap", leafTex);
+			foliageMaterial->Set("u_Material.AlbedoMap", boxTexture);
 			foliageMaterial->Set("u_Material.Shininess", 0.1f);
 			foliageMaterial->Set("u_Material.DiscardThreshold", 0.1f);
 			foliageMaterial->Set("u_Material.NormalMap", normalMapDefault);
@@ -294,18 +296,16 @@ void DefaultSceneLayer::_CreateScene()
 
 		// Create some lights for our scene
 		GameObject::Sptr lightParent = scene->CreateGameObject("Lights");
-
-		for (int ix = 0; ix < 50; ix++) {
+		{
 			GameObject::Sptr light = scene->CreateGameObject("Light");
-			light->SetPostion(glm::vec3(glm::diskRand(25.0f), 1.0f));
+			light->SetPostion(glm::vec3(glm::diskRand(0.0f), 1.0f));
 			lightParent->AddChild(light);
 
 			Light::Sptr lightComponent = light->Add<Light>();
 			lightComponent->SetColor(glm::linearRand(glm::vec3(0.0f), glm::vec3(1.0f)));
 			lightComponent->SetRadius(glm::linearRand(0.1f, 10.0f));
-			lightComponent->SetIntensity(glm::linearRand(1.0f, 2.0f));
+			lightComponent->SetIntensity(glm::linearRand(100.0f, 200.0f));
 		}
-
 		// We'll create a mesh that is a simple plane that we can resize later
 		MeshResource::Sptr planeMesh = ResourceManager::CreateAsset<MeshResource>();
 		planeMesh->AddParam(MeshBuilderParam::CreatePlane(ZERO, UNIT_Z, UNIT_X, glm::vec2(1.0f)));
@@ -318,7 +318,8 @@ void DefaultSceneLayer::_CreateScene()
 		// Set up the scene's camera
 		GameObject::Sptr camera = scene->MainCamera->GetGameObject()->SelfRef();
 		{
-			camera->SetPostion({ -9, -6, 15 });
+			camera->SetPostion({ 0.634, -7.196, 10.887 });
+			camera->SetRotation({ 36.900, -0.000, 2.000 });
 			camera->LookAt(glm::vec3(0.0f));
 
 			camera->Add<SimpleCameraControl>();
@@ -351,14 +352,14 @@ void DefaultSceneLayer::_CreateScene()
 		GameObject::Sptr wall1 = scene->CreateGameObject("Wall 1");
 		{
 			// Set position in the scene
-			wall1->SetPostion(glm::vec3(1.5f, 0.0f, 0.5f));
-			wall1->SetRotation(glm::vec3(90.0f, 0.0f, 0.0f));
+			wall1->SetPostion(glm::vec3(3.2f, 15.0f, 1.5f));
+			wall1->SetRotation(glm::vec3(0.0f, 0.0f, 90.0f));
 			// Add some behaviour that relies on the physics body
 			wall1->Add<JumpBehaviour>();
 
 			// Create and attach a renderer for the monkey
 			RenderComponent::Sptr renderer = wall1->Add<RenderComponent>();
-			renderer->SetMesh(wallMesh);
+			renderer->SetMesh(winng);
 			renderer->SetMaterial(boxMaterial);
 
 			/* Example of a trigger that interacts with static and kinematic bodies as well as dynamic bodies*/
@@ -366,24 +367,48 @@ void DefaultSceneLayer::_CreateScene()
 			TriggerVolume::Sptr volume = Check->AddComponent<TriggerVolume>();
 			ICollider::Sptr collider = volume->AddCollider(ConvexMeshCollider::Create());
 			
+			
 			// Attach a plane collider that extends infinitely along the X/Y axis
 			//RigidBody::Sptr physics = wall1->Add<RigidBody>(/*static by default*/);
 			//physics->AddCollider(ConvexMeshCollider::Create());
 		}
 
+		GameObject::Sptr win = scene->CreateGameObject("winng");
+		{
+			// Set position in the scene
+			win->SetPostion(glm::vec3(3.2f, 25.0f, 1.5f));
+			win->SetRotation(glm::vec3(0.0f, 0.0f, 90.0f));
+			// Add some behaviour that relies on the physics body
+			win->Add<JumpBehaviour>();
+
+			// Create and attach a renderer for the monkey
+			RenderComponent::Sptr renderer = win->Add<RenderComponent>();
+			renderer->SetMesh(wallMesh);
+			renderer->SetMaterial(boxMaterial);
+
+			/* Example of a trigger that interacts with static and kinematic bodies as well as dynamic bodies*/
+			EnemyTriggers::Sptr Check = win->Add<EnemyTriggers>();
+			TriggerVolume::Sptr volume = Check->AddComponent<TriggerVolume>();
+			ICollider::Sptr collider = volume->AddCollider(ConvexMeshCollider::Create());
+
+
+			// Attach a plane collider that extends infinitely along the X/Y axis
+			//RigidBody::Sptr physics = wall1->Add<RigidBody>(/*static by default*/);
+			//physics->AddCollider(ConvexMeshCollider::Create());
+		}
 		//Player 1
 		GameObject::Sptr monkey2 = scene->CreateGameObject("Monkey 1");
 		{
 			// Set position in the scene
-			monkey2->SetPostion(glm::vec3(10.0f, 0.0f, 2.0f));
-
+			monkey2->SetPostion(glm::vec3(10.0f, 0.0f, 5.0f));
+			monkey2->SetRotation(glm::vec3(90.0f,0.0f,0.0f));
 			// Add some behaviour that relies on the physics body
 			monkey2->Add<JumpBehaviour>();
 
 			// Create and attach a renderer for the monkey
 			RenderComponent::Sptr renderer = monkey2->Add<RenderComponent>();
 			renderer->SetMesh(monkeyMesh);
-			renderer->SetMaterial(boxMaterial);
+			renderer->SetMaterial(monkeyMaterial);
 
 			// Example of a trigger that interacts with static and kinematic bodies as well as dynamic bodies
 			EnemyTrigger::Sptr reset = monkey2->Add<EnemyTrigger>();

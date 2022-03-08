@@ -12,7 +12,7 @@
 
 SimpleObjectController::SimpleObjectController() :
 	IComponent(),
-	_moveSpeeds(glm::vec3(1.0f))
+	_moveSpeeds(glm::vec3(5.0f))
 {}
 
 
@@ -44,12 +44,12 @@ void SimpleObjectController::Update(float deltaTime)
 			_moveVector.y -= _moveSpeeds.z;
 		}
 		if (InputEngine::IsKeyDown(GLFW_KEY_SPACE)) {
-			_moveVector.y += _moveSpeeds.z; 
+			_moveVector.y += _moveSpeeds.z;
 		}
 		if (InputEngine::IsKeyDown(GLFW_KEY_LEFT_SHIFT)) {
 			_moveVector += 3.0f;
 		}
-
+		std::cout << GetGameObject()->GetPosition().z << std::endl;
 		_moveVector *= deltaTime;
 
 		GetGameObject()->SetPostion(GetGameObject()->GetPosition() + _moveVector);
