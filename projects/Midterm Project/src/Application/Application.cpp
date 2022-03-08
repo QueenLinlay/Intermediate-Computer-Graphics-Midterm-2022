@@ -45,6 +45,7 @@
 #include "Gameplay/Components/Light.h"
 #include "Gameplay/Components/SimpleObjectController.h"
 #include "Gameplay/Components/EnemyTrigger.h"
+#include "Gameplay/Components/SimpleAutoMovement.h"
 
 // GUI
 #include "Gameplay/Components/GUI/RectTransform.h"
@@ -277,6 +278,7 @@ void Application::_RegisterClasses()
 
 	ComponentManager::RegisterType<SimpleObjectController>();
 	ComponentManager::RegisterType<EnemyTrigger>();
+	ComponentManager::RegisterType<SimpleAutoMovement>();
 }
 
 void Application::_Load() {
